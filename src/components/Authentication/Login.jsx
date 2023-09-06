@@ -27,7 +27,7 @@ const Login = () => {
     }
     try{
       const config = {
-        url: "http://localhost:8000",
+        url: "https://subodh-chat-app-server.vercel.app/",
         headers: {
           "Content-Type":"application/json"
         }

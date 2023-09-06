@@ -79,6 +79,7 @@ const Signup = () => {
     }
     try{
       const config = {
+        url: "https://subodh-chat-app-server.vercel.app/",
         headers : {
           "Content-type":"application/json",
         }

@@ -12,7 +12,7 @@ import ScrollableChat from './ScrollableChat';
 import animationData from "../../animation/typing.json";
 import "./style.css";
 
-const ENDPOINT = "https://chat-app-subodh-sharma.vercel.app";
+const ENDPOINT = "https://subodh-chat-app-server.vercel.app/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
