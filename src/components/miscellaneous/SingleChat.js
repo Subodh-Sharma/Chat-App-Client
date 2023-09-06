@@ -90,15 +90,6 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
 
     useEffect(()=>{
         socket = io(ENDPOINT);
-            // rejectUnauthorized: false,
-            // withCredentials:true,
-            // transportOptions : {
-            //     polling : {
-            //         extraHeaders: {
-            //             "my-custom-header": "abcd"
-            //         }
-            //     }
-            // }
         socket.emit("setup",user);
         socket.on("connected",()=>setSocketConnected(true))
         socket.on("typing",()=>setIsTyping(true))
