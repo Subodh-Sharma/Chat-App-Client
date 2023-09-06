@@ -7,7 +7,7 @@ import ProfileModal from "./ProfileModal";
 import UpdateGroupChatModal from './UpdateGroupChatModal';
 import axios from 'axios';
 import io from "socket.io-client";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import ScrollableChat from './ScrollableChat';
 import animationData from "../../animation/typing.json";
 import "./style.css";
@@ -164,7 +164,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
                 </div>
             )}
             <FormControl onKeyDown={sendMessage} isRequired mt={3}>
-                {isTyping ? <div><Lottie options={defaultOptions} width={70} style={{marginBottom:15, marginLeft: 0}}/></div>: <></>}
+                {isTyping ? <span>typing...</span>: <></>}
                 <Input variant="filled" bg="#E0E0E0" placeholder="Enter a message..." onChange={typingHandler} value={newMessage}/>
             </FormControl>
         </Box>
