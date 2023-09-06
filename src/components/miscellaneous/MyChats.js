@@ -18,7 +18,7 @@ const MyChats = ({fetchAgain}) => {
           Authorization: `Bearer ${user.token}`
         }
       }
-      const { data } = await axios.get("/api/chat",config);
+      const { data } = await axios.get("https://subodh-chat-app-server.vercel.app/api/chat",config);
       setChats(data);
     }catch(error){
       toast({

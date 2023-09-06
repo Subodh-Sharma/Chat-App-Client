@@ -27,7 +27,7 @@ const GroupChatModal = ({children}) => {
           Authorization: `Bearer ${user.token}`
         }
       }
-      const {data} = await axios.get(`/api/user?search=${search}`,config)
+      const {data} = await axios.get(`https://subodh-chat-app-server.vercel.app/api/user?search=${search}`,config)
       setLoading(false);
       setSearchResult(data);
     }catch(error){
@@ -59,7 +59,7 @@ const GroupChatModal = ({children}) => {
           Authorization: `Bearer ${user.token}`
         }
       }
-      const {data} = await axios.post("/api/chat/group",{
+      const {data} = await axios.post("https://subodh-chat-app-server.vercel.app/api/chat/group",{
         name: groupChatName,
         users:JSON.stringify(selectedUsers.map((u)=>u._id))
       },config)

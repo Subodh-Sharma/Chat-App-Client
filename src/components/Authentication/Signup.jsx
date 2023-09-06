@@ -79,12 +79,11 @@ const Signup = () => {
     }
     try{
       const config = {
-        url: "https://subodh-chat-app-server.vercel.app/",
         headers : {
           "Content-type":"application/json",
         }
       }
-      const { data } = await axios.post("/api/user/signup",{name,email,password,pic},config);
+      const { data } = await axios.post("https://subodh-chat-app-server.vercel.app/api/user/signup",{name,email,password,pic},config);
       toast({
         title: "Registration Successful",
         status: "success",

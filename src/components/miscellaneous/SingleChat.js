@@ -25,14 +25,14 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
     const [isTyping,setIsTyping] = useState(false);
     const toast = useToast();
 
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-        },
-      };
+    // const defaultOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: animationData,
+    //     rendererSettings: {
+    //       preserveAspectRatio: "xMidYMid slice",
+    //     },
+    //   };
 
     const fetchMessages = async()=>{
         if(!selectedChat) return;
@@ -44,7 +44,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
                 }
             }
             setLoading(true);
-            const {data} = await axios.get(`/api/message/${selectedChat._id}`,config);
+            const {data} = await axios.get(`https://subodh-chat-app-server.vercel.app/api/message/${selectedChat._id}`,config);
             setMessages(data);
             setLoading(false);
             socket.emit("join chat",selectedChat._id);
@@ -69,7 +69,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
                         Authorization : `Bearer ${user.token}`
                     }
                 }
-                const {data} = await axios.post("/api/message",{
+                const {data} = await axios.post("https://subodh-chat-app-server.vercel.app/api/message",{
                     content:newMessage,
                     chatId: selectedChat._id
                 },config);
