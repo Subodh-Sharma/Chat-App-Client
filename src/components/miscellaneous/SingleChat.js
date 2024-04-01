@@ -14,7 +14,7 @@ import "./style.css";
 
 const ENDPOINT = "https://subodh-chat-app-server.vercel.app";
 var selectedChatCompare;
-socket = io(ENDPOINT);
+const socket = io(ENDPOINT);
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
     const [messages,setMessages] = useState([]);
