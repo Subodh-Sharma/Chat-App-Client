@@ -32,6 +32,8 @@ const Login = () => {
         }
       }
       const { data } = await axios.post("https://subodh-chat-app-server.vercel.app/api/user/login",{email,password},config);
+      // const { data } = await axios.post("http://localhost:8000/api/user/login",{email,password},config);
+
       toast({
         title: "Login Successful",
         status: "success",
