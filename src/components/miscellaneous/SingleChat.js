@@ -12,8 +12,9 @@ import ScrollableChat from './ScrollableChat';
 import animationData from "../../animation/typing.json";
 import "./style.css";
 
-const ENDPOINT = "https://subodh-chat-app-server.vercel.app/";
-var socket, selectedChatCompare;
+const ENDPOINT = "https://subodh-chat-app-server.vercel.app";
+var selectedChatCompare;
+socket = io(ENDPOINT);
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
     const [messages,setMessages] = useState([]);
@@ -89,7 +90,6 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
     };
 
     useEffect(()=>{
-        socket = io(ENDPOINT);
         socket.emit("setup",user);
         socket.on("connected",()=>setSocketConnected(true))
         socket.on("typing",()=>setIsTyping(true))
