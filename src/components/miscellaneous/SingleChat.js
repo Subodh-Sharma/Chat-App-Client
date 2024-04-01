@@ -12,9 +12,11 @@ import ScrollableChat from './ScrollableChat';
 import animationData from "../../animation/typing.json";
 import "./style.css";
 
-const ENDPOINT = "https://subodh-chat-app-server.vercel.app";
+// const ENDPOINT = "https://subodh-chat-app-server.vercel.app";
 var selectedChatCompare;
-const socket = io(ENDPOINT);
+const socket = io('https://subodh-chat-app-server.vercel.app', {
+  transports: ['websocket'], // Specify WebSocket transport
+});
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
     const [messages,setMessages] = useState([]);
